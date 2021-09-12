@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_navigation_graph"
+    app:startDestination="@id/workout_list">
+
+    <fragment
+        android:id="@+id/workout_list"
+        android:name="brax.quality.workoutlog.Workout_list"
+        android:label="fragment_workout_list"
+        tools:layout="@layout/fragment_workout_list" >
+        <action
+            android:id="@+id/action_workout_list_to_playlist"
+            app:destination="@id/playlist" />
+    </fragment>
+    <fragment
+        android:id="@+id/playlist"
+        android:name="brax.quality.workoutlog.Playlist"
+        android:label="fragment_playlist"
+        tools:layout="@layout/fragment_playlist" />
+</navigation>
