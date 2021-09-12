@@ -1,16 +1,24 @@
 package brax.quality.workoutlog;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import javax.sql.DataSource;
 
@@ -29,30 +37,38 @@ public class MainActivity extends AppCompatActivity {
                 .commit();*/
 
 
-        MaterialToolbar toolbar = findViewById(R.id.topAppBar);
-        
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        ((Toolbar)findViewById(R.id.topAppBar)).setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.actionItem_createWorkout) {
-                    getSupportFragmentManager()
+                    Navigation.findNavController(findViewById(R.id.fragmentContainerView)).navigate(R.id.action_workout_list_to_playlist);
+                    /*getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fragmentContainerView, Playlist.newInstance("", ""))
                             .addToBackStack(null)
-                            .commit();
-                    Toast.makeText(MainActivity.this, "yo. it worked.", Toast.LENGTH_SHORT).show();
+                            .commit();*/
                     return true;
                 } else {
-                    Toast.makeText(MainActivity.this, "else statement", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "there was an issue", Toast.LENGTH_SHORT).show();
                     return false;
                 }
             }
         });
     }
 
+    @Override
+    public void onPostCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onPostCreate(savedInstanceState, persistentState);
 
+        NavController navController = Navigation.findNavController(this,R.id.fragmentContainerView);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
 
+        MaterialToolbar toolbar = findViewById(R.id.topAppBar);
 
+        NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration);
+        NavigationUI.setupWithNavController(toolbar,navController,appBarConfiguration);
+
+    }
 }
 
 
