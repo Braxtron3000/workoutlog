@@ -51,11 +51,11 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
         }
 
         public TextView getTv_description(){
-            return tv_title;
+            return tv_description;
         }
 
         public TextView getTv_type(){
-            return tv_title;
+            return tv_type;
         }
 
     }

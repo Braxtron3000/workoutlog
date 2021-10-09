@@ -2,6 +2,8 @@ package brax.quality.workoutlog;
 
 import android.content.Context;
 
+//Todo: adjust for workout tags: power, strength, size, chest, back, olympic etc.
+
 public class Workout {
     private Context context;
 

@@ -13,11 +13,22 @@
         <action
             android:id="@+id/action_workout_list_to_playlist"
             app:destination="@id/playlist"
-            app:enterAnim="@android:anim/fade_in" />
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/playlist"
-        android:name="brax.quality.workoutlog.Playlist"
+        android:name="brax.quality.workoutlog.New_workout"
         android:label="fragment_playlist"
-        tools:layout="@layout/fragment_playlist" />
+        tools:layout="@layout/new_workout" >
+        <action
+            android:id="@+id/action_playlist_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="brax.quality.workoutlog.ExerciseFragment"
+        android:label="fragment_exercise_list"
+        tools:layout="@layout/fragment_exercise_list" />
 </navigation>
