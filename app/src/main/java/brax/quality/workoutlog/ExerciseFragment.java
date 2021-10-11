@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.w3c.dom.Comment;
+
 
 import java.util.List;
 
@@ -80,34 +80,38 @@ public class ExerciseFragment extends Fragment {
         jsonPlaceHolderAPI = retrofit.create(ExerciseApiFetcher.class);
 
         //create a call from a list of comments from the Interface calling all the comments
-        Call<List<Comment>> call = jsonPlaceHolderAPI.getComments("https://jsonplaceholder.typicode.com/posts/3/comments");
+        Call<List<Exercise>> call = jsonPlaceHolderAPI.getExercises("https://jsonplaceholder.typicode.com/posts/3/comments");
 
         //call the enqueue
-        call.enqueue(new Callback<List<Comment>>() {
+        call.enqueue(new Callback<List<Exercise>>() {
             @Override
-            public void onResponse(Call<List<Comment>> call, Response<List<Comment>> response) {
+            public void onResponse(Call<List<Exercise>> call, Response<List<Exercise>> response) {
                 if (!response.isSuccessful()) {
                     Log.d("BIG WRONG", response.message().toString());
                     return;
                 }
-                List<Comment> comments = response.body();
+                List<Exercise> exercises = response.body();
 
                 if (view instanceof RecyclerView) {
                     Context context = view.getContext();
                     RecyclerView recyclerView = (RecyclerView) view;
-                    if (mColumnCount <= 1) {
+
+
+                    /*if (mColumnCount <= 1) {
                         recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     } else {
                         recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-                    }
-                    recyclerView.setAdapter(new MyExerciseRecyclerViewAdapter(comments));
+                    }*/
+                    recyclerView.setAdapter(new MyExerciseRecyclerViewAdapter(exercises));
+                    int count = (new MyExerciseRecyclerViewAdapter(exercises)).getItemCount();
+                    Log.d("RECYCLERVIEW LENGTH",count+"");
                 }
 
 
             }
 
             @Override
-            public void onFailure(Call<List<Comment>> call, Throwable t) {
+            public void onFailure(Call<List<Exercise>> call, Throwable t) {
                 Log.d("api fetch failure","failure to call api");
             }
         });

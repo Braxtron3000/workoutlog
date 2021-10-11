@@ -21,24 +21,24 @@ import java.util.List;
  */
 public class MyExerciseRecyclerViewAdapter extends RecyclerView.Adapter<MyExerciseRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Comment> mValues;
+    private final List<Exercise> mValues;
 
-    public MyExerciseRecyclerViewAdapter(List<Comment> items) {
+    public MyExerciseRecyclerViewAdapter(List<Exercise> items) {
         mValues = items;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        return new ViewHolder(FragmentItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
-
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.fragment_item, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        Exercise exercise = mValues.get(position);
+        holder.setName(exercise.getExerciseTitle());
+        holder.setDescription(exercise.getName());
     }
 
     @Override
@@ -47,23 +47,26 @@ public class MyExerciseRecyclerViewAdapter extends RecyclerView.Adapter<MyExerci
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public final TextView name;
+        public final TextView description;
 
-        public ViewHolder(FragmentItemBinding binding) {
-            super(binding.getRoot());
-            mIdView = binding.exerciseName;
-            mContentView = binding.exerciseType;
+        public void setName(String name) {
+            this.name.setText(name);
         }
 
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+        public void setDescription(String description) {
+            this.description.setText(description);
         }
+
+        public ViewHolder(View view) {
+            super(view);
+            name = (TextView) view.findViewById(R.id.exercise_name);
+            description = (TextView) view.findViewById(R.id.exercise_type);
+        }
+
+
+
     }
-
-
 
 
 }

@@ -12,7 +12,7 @@ import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 
 public interface ExerciseApiFetcher {
-    @GET("posts")
+    /*@GET("posts")
     Call<List<Exercise>> getPosts(
             @Query("userId") Integer[] userId,
             @Query("_sort") String sort,
@@ -21,7 +21,7 @@ public interface ExerciseApiFetcher {
     @GET("posts")
     Call<List<Exercise>> getPosts(@QueryMap Map<String, String> parameters);
     @GET("posts/{id}/comments")
-    Call<List<org.w3c.dom.Comment>> getComments(@Path("id") int postId);
+    Call<List<Exercise>> getExercises(@Path("id") int postId);*/
     @GET
-    Call<List<org.w3c.dom.Comment>> getComments(@Url String url);
+    Call<List<Exercise>> getExercises(@Url String url);
 }
