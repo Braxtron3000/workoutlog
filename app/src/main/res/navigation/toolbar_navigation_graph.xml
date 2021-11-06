@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/workout_list"
-        android:name="brax.quality.workoutlog.Workout_list"
+        android:name="brax.quality.workoutlog.ui.Workout_list"
         android:label="fragment_workout_list"
         tools:layout="@layout/fragment_workout_list" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/playlist"
-        android:name="brax.quality.workoutlog.New_workout"
+        android:name="brax.quality.workoutlog.ui.New_workout"
         android:label="fragment_playlist"
         tools:layout="@layout/new_workout" >
         <action
@@ -28,7 +28,16 @@
 
     <fragment
         android:id="@+id/exerciseFragment"
-        android:name="brax.quality.workoutlog.ExerciseFragment"
+        android:name="brax.quality.workoutlog.ui.Exercise_list"
         android:label="fragment_exercise_list"
-        tools:layout="@layout/fragment_exercise_list" />
+        tools:layout="@layout/fragment_exercise_list" >
+        <action
+            android:id="@+id/action_exerciseFragment_to_gifViewFragment"
+            app:destination="@id/gifViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gifViewFragment"
+        android:name="brax.quality.workoutlog.ui.gifViewFragment"
+        android:label="fragment_gif_view"
+        tools:layout="@layout/fragment_gif_view" />
 </navigation>

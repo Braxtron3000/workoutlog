@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Workout_list">
+    tools:context=".ui.Workout_list">
 <!-- Todo: adjust functionality for 1. tracking page 2. workouts 3. a programs page? -->
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/colorOnPrimary"
-        tools:context=".MainActivity">
+        android:background="?attr/colorPrimary"
+        tools:context=".ui.MainActivity">
 
         <!--<com.google.android.material.appbar.MaterialToolbar
             app:layout_constraintTop_toTopOf="parent"
@@ -40,14 +39,18 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mtbttn_addExercise"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="60dp"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:rotation="90"
             android:text="Create"
-            android:backgroundTint="@color/darkGreen"
-            android:tint="@color/darkGreen"
-            app:icon="@drawable/ic_baseline_add_24"/>
+            android:tint="?attr/colorPrimaryVariant"
+            app:icon="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.65"
+            app:layout_constraintStart_toEndOf="@+id/rcvw_workoutPlaylist"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.13999999" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

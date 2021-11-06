@@ -4,40 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="90dp"
+    android:layout_marginBottom="5dp"
     android:orientation="horizontal">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton"
-        android:layout_width="70dp"
-        android:layout_height="0dp"
-        android:layout_marginRight="16dp"
-        android:background="@android:color/transparent"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view"
-        app:tint="@color/darkGreen" />
+        android:background="?attr/colorPrimaryVariant"/>
 
     <TextView
         android:id="@+id/exercise_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="9dp"
         android:text="Chest Fly (Dumbbell)"
         android:textAppearance="?attr/textAppearanceListItem"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/exercise_type"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/exercise_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_marginEnd="272dp"
         android:text="Chest"
         android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exercise_name" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package brax.quality.workoutlog;
+package brax.quality.workoutlog.ui;
 
 import android.os.Bundle;
 
@@ -10,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import brax.quality.workoutlog.R;
+import brax.quality.workoutlog.Workout;
+import brax.quality.workoutlog.WorkoutAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -9,7 +9,7 @@
     android:layout_marginLeft="40dp"
     android:layout_marginBottom="20dp"
     app:cardCornerRadius="20dp"
-    android:background="@android:color/darker_gray">
+    android:background="?attr/colorSecondary">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -57,12 +57,12 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="6dp"
-        android:backgroundTint="@color/darkGreen"
+        android:backgroundTint="?attr/colorPrimaryVariant"
         android:src="@drawable/ic_baseline_play_arrow_24"
-        app:backgroundTint="@color/darkGreen"
+        app:backgroundTint="?attr/colorPrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@android:color/white" />
+        app:tint="?attr/colorOnPrimary" />
 
 
 

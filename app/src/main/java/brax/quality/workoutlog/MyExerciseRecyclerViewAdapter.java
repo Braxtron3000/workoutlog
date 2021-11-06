@@ -1,21 +1,25 @@
 package brax.quality.workoutlog;
 
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Comment;
+import com.bumptech.glide.Glide;
 
-import brax.quality.workoutlog.placeholder.PlaceholderContent.PlaceholderItem;
-import brax.quality.workoutlog.databinding.FragmentItemBinding;
-
+import java.io.IOException;
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
  * TODO: Replace the implementation with code for your data type.
  * // list of exercises to choose from
  */
@@ -27,6 +31,7 @@ public class MyExerciseRecyclerViewAdapter extends RecyclerView.Adapter<MyExerci
         mValues = items;
     }
 
+    //when each viewholder is created inflate the fragment item layout
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -34,11 +39,21 @@ public class MyExerciseRecyclerViewAdapter extends RecyclerView.Adapter<MyExerci
         return new ViewHolder(view);
     }
 
+    //onbind tells what to set the values of the viewholder to
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Exercise exercise = mValues.get(position);
-        holder.setName(exercise.getExerciseTitle());
-        holder.setDescription(exercise.getName());
+        holder.setName(exercise.getName());
+        holder.setDescription(exercise.getTarget());
+
+        try {
+            holder.setExerciseTutorial(exercise.getGifUrl());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("holder.setExerciseTutorial", "you have an issue in the exercise RecyclerView. look at line 45.");
+        }
+
+
     }
 
     @Override
@@ -46,24 +61,39 @@ public class MyExerciseRecyclerViewAdapter extends RecyclerView.Adapter<MyExerci
         return mValues.size();
     }
 
+    //a class which templates what the characteristics of each exercise item.
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+
         public final TextView name;
         public final TextView description;
+        public final ImageView exerciseTutorialBtn;
+        public final Context context;
 
         public void setName(String name) {
             this.name.setText(name);
+        }
+
+        public String getName() {
+            return name.getText().toString();
         }
 
         public void setDescription(String description) {
             this.description.setText(description);
         }
 
-        public ViewHolder(View view) {
-            super(view);
-            name = (TextView) view.findViewById(R.id.exercise_name);
-            description = (TextView) view.findViewById(R.id.exercise_type);
+        public void setExerciseTutorial(String url) throws IOException {
+            Glide.with(context).load(url).into(exerciseTutorialBtn);
         }
 
+
+        public ViewHolder(View view) {
+            super(view);
+            context = view.getContext();
+            name = (TextView) view.findViewById(R.id.exercise_name);
+            description = (TextView) view.findViewById(R.id.exercise_type);
+            exerciseTutorialBtn = (ImageView) view.findViewById(R.id.imageButton);
+        }
 
 
     }

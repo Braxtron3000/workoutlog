@@ -3,8 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/fragment_exercise_list.xml" value="0.21" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/fragment_item.xml" value="0.22" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/fragment_workout_list.xml" value="0.18" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/new_workout.xml" value="0.22" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/play_workout_template.xml" value="0.1" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/workoutlog/app/src/main/res/layout/playlist_exercise_layout.xml" value="0.10555555555555556" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/fragment_exercise_list.xml" value="0.209375" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/fragment_gif_view.xml" value="0.13697916666666668" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/fragment_item.xml" value="0.22" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/fragment_lvl2_gifview.xml" value="0.13697916666666668" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/new_workout.xml" value="0.14130434782608695" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/layout/playlist_exercise_layout.xml" value="0.14130434782608695" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/menu/home_toolbar.xml" value="0.14583333333333334" />
+        <entry key="..\:/androidStudioProjects/workoutlog/app/src/main/res/menu/menu_new_workout.xml" value="0.1" />
       </map>
     </option>
   </component>

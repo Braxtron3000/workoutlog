@@ -1,4 +1,4 @@
-package brax.quality.workoutlog;
+package brax.quality.workoutlog.ui;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +22,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import javax.sql.DataSource;
 
+import brax.quality.workoutlog.R;
+
 public class MainActivity extends AppCompatActivity {
 
     AppBarConfiguration appBarConfiguration;
@@ -31,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
     }
 

@@ -4,18 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 <!--Todo: MVVM structure! -->
-
-
-<!--<FrameLayout
-    android:id="@+id/frameLayout"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    app:layout_constraintTop_toBottomOf="@id/topAppBar"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:name="Workout_list"
-    tools:layout="@layout/fragment_workout_list"/>-->
 
 <androidx.fragment.app.FragmentContainerView
     android:id="@+id/fragmentContainerView"
